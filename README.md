@@ -3,7 +3,7 @@ Por não encontrar ferramentas de Workflow específica para Gestão de mudanças
 
 ## Etapa 1: Máquina Virtual
 1. Crie uma máquina virtual com Linux Ubuntu
-2. Instala e Docker
+2. Instale e Docker
 
 ## Etapa 2: Docker
 1. Crie o arquivo docker-compose.yml
