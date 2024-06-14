@@ -21,5 +21,5 @@ Por não encontrar ferramentas de Workflow específica para Gestão de mudanças
 ## Etapa 5: Aplicação
 1. No AppSmith, crie um workspace para a GMUD
 2. Clique em criar nova aplicação "Create New"
-3. Importe o arquivo json da aplicação (veja na pasta '
+3. Importe o arquivo json da aplicação (veja na pasta 'AppSmith')
    
