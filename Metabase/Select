@@ -1,0 +1,66 @@
+Para montar um simples relatorio no Metabase ou Grafana utiizei esses selects
+
+
+
+Quais os tipos de mudanças por área?
+======================================
+select a.area as "Área", tp."type" as "Tipo", count(*) "Quantidade" from tbchangerequest t 
+inner join tbarea a ON 
+t.areaid = a.id 
+inner join tbtype tp on
+t.typeid = tp.id
+group by a.area, tp."type" 
+
+
+
+Quais são os motivos das mudanças por área?
+======================================
+select a.area as "Área", r.reason  as "Motivo", count(*) "Quantidade" from tbchangerequest t 
+inner join tbarea a ON 
+t.areaid = a.id 
+inner join tbreason r on
+t.reasonid  = r.id
+group by a.area, r.reason 
+
+
+Qual o risco das mudanças por área?
+======================================
+select a.area as "Área", r.description as "Risco", count(*) "Quantidade" from tbchangerequest t 
+inner join tbarea a ON 
+t.areaid = a.id 
+inner join tbrisk r on
+t.riskid  = r.id
+group by a.area, r.description 
+
+
+Qual o status das mudanças por área?
+======================================
+select a.area as "Área", s.status as "Status", count(*) as "Quantidade" from tbchangerequest t 
+inner join tbarea a ON 
+t.areaid = a.id 
+inner join tbstatus s on
+t.statusid = s.id
+group by a.area, s.status 
+
+
+Quantas mudanças foram cadastradas por área?
+======================================
+select a.area as "Área", cast(t.forecaststart as date) as "Execução", count(*) "Quantidade" from tbchangerequest t 
+inner join tbarea a ON 
+t.areaid = a.id 
+group by a.area, t.forecaststart 
+order by t.forecaststart desc
+
+
+Quantidade de mudanças no tempo por áreas?
+======================================
+select a.area as "Área", cast(t.forecaststart as date) as "Execução", count(*) "Quantidade" from tbchangerequest t 
+inner join tbarea a ON 
+t.areaid = a.id 
+group by a.area, t.forecaststart 
+order by t.forecaststart desc
+
+
+
+
+
